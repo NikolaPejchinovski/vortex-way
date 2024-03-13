@@ -3,31 +3,31 @@
 
 @font-face {
   font-family: "GT Ultra";
-  src: url("/fonts/GTUltra/GTUltraFine-Bold.otf") format("opentype");
+  src: url("../fonts/GTUltra/GTUltraFine-Bold.otf") format("opentype");
   font-weight: bold;
 }
 
 @font-face {
   font-family: "GT Ultra";
-  src: url("/fonts/GTUltra/GTUltraFine-Light.otf") format("opentype");
+  src: url("../fonts/GTUltra/GTUltraFine-Light.otf") format("opentype");
   font-weight: light;
 }
 
 @font-face {
   font-family: "GT Ultra";
-  src: url("/fonts/GTUltra/GTUltraFine-Regular.otf") format("opentype");
+  src: url("../fonts/GTUltra/GTUltraFine-Regular.otf") format("opentype");
   font-weight: 400;
 }
 
 @font-face {
   font-family: "GT Ultra";
-  src: url("/fonts/GTUltra/GTUltraFine-Black.otf") format("opentype");
+  src: url("../fonts/GTUltra/GTUltraFine-Black.otf") format("opentype");
   font-weight: bolder;
 }
 
 @font-face {
   font-family: "GT Ultra";
-  src: url("/fonts/GTUltra/GTUltraFine-Thin.otf") format("opentype");
+  src: url("../fonts/GTUltra/GTUltraFine-Thin.otf") format("opentype");
   font-weight: 100;
 }
 
@@ -45,6 +45,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {

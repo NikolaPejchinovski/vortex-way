@@ -7,8 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const modeIcon = document.querySelector(".mode-switch .icon");
   const line = document.querySelectorAll(".line");
   const root = document.documentElement;
+  // var Scrollbar = window.Scrollbar;
   let lightMode = false;
 
+  // Scrollbar.init(document.querySelector("#my-scrollbar"));
   modeBtn.addEventListener("click", handleModeChange);
 
   window.addEventListener("scroll", () => {
