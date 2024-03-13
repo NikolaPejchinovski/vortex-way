@@ -1,0 +1,296 @@
+/* Font Imports */
+@import url("https://fonts.googleapis.com/css2?family=Balthazar&family=Poppins:wght@200;400;600;800&display=swap");
+
+@font-face {
+  font-family: "GT Ultra";
+  src: url("/fonts/GTUltra/GTUltraFine-Bold.otf") format("opentype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "GT Ultra";
+  src: url("/fonts/GTUltra/GTUltraFine-Light.otf") format("opentype");
+  font-weight: light;
+}
+
+@font-face {
+  font-family: "GT Ultra";
+  src: url("/fonts/GTUltra/GTUltraFine-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "GT Ultra";
+  src: url("/fonts/GTUltra/GTUltraFine-Black.otf") format("opentype");
+  font-weight: bolder;
+}
+
+@font-face {
+  font-family: "GT Ultra";
+  src: url("/fonts/GTUltra/GTUltraFine-Thin.otf") format("opentype");
+  font-weight: 100;
+}
+
+/* Custom Properties */
+:root {
+  --primary-color: #080808;
+  --secondary-color: #e8e8e8;
+  --navbar: #131313;
+  --red: #b31942;
+  --blue: #0a3161;
+}
+
+/* Utility */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "GT Ultra", sans-serif;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  overflow-x: hidden;
+}
+
+section {
+  margin-bottom: 200px;
+}
+
+.invert {
+  filter: invert();
+}
+
+h1 {
+  font-size: 45px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+/* Lines */
+.lines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  margin: auto;
+  width: 90vw;
+  z-index: -1;
+}
+
+.line {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.line::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 15vh;
+  width: 100%;
+  top: -50%;
+  left: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    #ffffff 75%,
+    #ffffff 100%
+  );
+  animation: drop 4s 0s infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+}
+
+.line:nth-child(1) {
+  margin-left: -30%;
+}
+
+.line:nth-child(1)::after {
+  animation-delay: 2s;
+}
+
+.line:nth-child(3) {
+  margin-left: 30%;
+}
+
+.line:nth-child(3)::after {
+  animation-delay: 2.5s;
+}
+
+@keyframes drop {
+  0% {
+    top: -50%;
+  }
+  100% {
+    top: 110%;
+  }
+}
+
+/* Bg Video */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  opacity: 0.08;
+  transition: 1s ease-in-out;
+  min-width: 100vw;
+  transform: scale(1.2);
+}
+
+#bg-video.scrolled {
+  opacity: 0;
+}
+
+/* Mode Switch */
+
+.mode-switch {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 20px;
+  left: 20px;
+  background-color: transparent;
+  border: 1px solid var(--secondary-color);
+  border-radius: 12px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.mode-switch .icon {
+  background: url(/img/light\ mode.svg);
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+}
+
+.mode-switch .icon.light {
+  background: url(/img/dark\ mode.svg);
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+}
+
+/* Header */
+
+header {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--navbar);
+  width: 500px;
+  height: 70px;
+  padding: 0 20px;
+  border-radius: 45px;
+  transition: 0.5s ease-in-out;
+}
+
+header nav.scrolled {
+  background-color: transparent;
+  width: 100vw;
+  padding: 0 60px;
+}
+
+.contact-btn {
+  background-color: transparent;
+  color: var(--secondary-color);
+  font-family: "Poppins", sans-serif;
+  border: none;
+  border-radius: 45px;
+  border: 1px solid var(--secondary-color);
+  height: 50px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.contact-btn:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  margin-top: 100px;
+}
+
+.main-heading {
+  font-family: "GT Ultra", sans-serif;
+  font-weight: 200;
+  width: 600px;
+  text-align: center;
+  padding: 50px;
+  margin: 100px 0;
+}
+
+.sub-heading {
+  font-family: "GT Ultra", sans-serif;
+  font-weight: 100;
+  width: 500px;
+  text-align: center;
+  padding: 50px;
+  opacity: 0.8;
+}
+
+/* Based In Section */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 0 200px;
+}
+
+.container .left img {
+  width: 400px;
+}
+
+.container .right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: right;
+}
+
+.container .right {
+  padding: 20px 0;
+}
+
+.container .right h1 {
+  font-weight: 200;
+}
+
+.container .right h2 {
+  font-weight: 100;
+}
