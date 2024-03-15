@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   const modeBtn = document.querySelector(".mode-switch");
-  const logo = document.querySelector(".logo");
+  const logo = document.querySelectorAll(".logo");
   const nav = document.querySelector("header nav");
+  const globe = document.querySelector(".globe");
   const video = document.getElementById("bg-video");
   const usMap = document.querySelector(".container .left img");
   const modeIcon = document.querySelector(".mode-switch .icon");
@@ -100,9 +101,10 @@ document.addEventListener("DOMContentLoaded", function () {
   function handleModeChange() {
     lightMode = !lightMode;
     if (lightMode) {
-      logo.classList.add("invert");
+      logo.forEach((l) => l.classList.add("invert"));
       usMap.classList.add("invert");
       video.classList.add("invert");
+      globe.classList.add("invert");
       video.style.opacity = "0.18";
       root.style.setProperty("--primary-color", "#e8e8e8");
       root.style.setProperty("--secondary-color", "#080808");
@@ -119,9 +121,10 @@ document.addEventListener("DOMContentLoaded", function () {
       )`)
       );
     } else {
-      logo.classList.remove("invert");
+      logo.forEach((l) => l.classList.remove("invert"));
       usMap.classList.remove("invert");
       video.classList.remove("invert");
+      globe.classList.remove("invert");
       video.style.opacity = "0.1";
       root.style.setProperty("--primary-color", "#080808");
       root.style.setProperty("--secondary-color", "#e8e8e8");

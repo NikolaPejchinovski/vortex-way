@@ -252,6 +252,7 @@ header nav.scrolled {
   align-items: center;
   justify-content: center;
   height: 80vh;
+  width: 100vw;
   margin-top: 50px;
   padding-top: 100px;
 }
@@ -436,4 +437,66 @@ header nav.scrolled {
 .approach-text p {
   font-weight: 100;
   font-size: 20px;
+}
+
+/* CTA */
+
+#cta .container {
+  justify-content: center;
+  padding: 100px 0;
+}
+
+#cta .container .left {
+  text-align: right;
+  width: 700px;
+  margin-right: 40px;
+}
+
+#cta h1 {
+  font-size: 35px;
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+
+#cta h2 {
+  font-size: 25px;
+  font-weight: 100;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+#cta .container .right img {
+  width: 400px;
+}
+
+#cta .contact-btn {
+  border-radius: 0px;
+  text-transform: uppercase;
+  padding: 5px;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  height: 350px;
+  border-top: 1px solid var(--border);
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 20px;
+}
+
+.globe {
+  width: 64px;
+  height: 64px;
+  background-image: url(../img/earth.gif);
+  background-size: contain;
 }
