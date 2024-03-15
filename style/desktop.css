@@ -442,13 +442,14 @@ header nav.scrolled {
 /* CTA */
 
 #cta .container {
-  justify-content: center;
-  padding: 100px 0;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: 100px 200px;
 }
 
 #cta .container .left {
-  text-align: right;
-  width: 700px;
+  text-align: left;
+  width: 600px;
   margin-right: 40px;
 }
 
