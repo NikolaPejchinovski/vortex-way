@@ -40,5 +40,53 @@
   .container {
     flex-direction: column;
     padding: 0 30px;
+    text-align: center;
+  }
+
+  .container .right {
+    text-align: center;
+  }
+
+  /* Section 2 */
+
+  #section2 .container h1 {
+    width: 400px;
+  }
+
+  #section2 .container h2 {
+    width: 400px;
+  }
+
+  /* Our Approach */
+
+  .approach {
+    margin-bottom: 50px;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .middle-line {
+    display: none;
+  }
+
+  .approach-number {
+    display: none;
+  }
+
+  /* CTA */
+  #cta .container {
+    flex-direction: column-reverse;
+  }
+
+  #cta .container .left {
+    text-align: center;
+    width: 600px;
+    margin-right: 0px;
+  }
+
+  footer {
+    text-align: center;
   }
 }
