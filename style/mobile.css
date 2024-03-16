@@ -1,4 +1,13 @@
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
+  /* Utility */
+
+  h1 {
+    font-size: 35px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
   /* Bg Video */
 
   #bg-video {
@@ -13,28 +22,32 @@
   header nav {
     background: transparent;
     width: 100vw;
-    padding: 0 30px;
+    padding: 0 20px;
   }
 
   header nav.scrolled {
-    padding: 0 30px;
+    padding: 0 20px;
   }
 
   /* Hero Section */
 
   .main-heading {
-    font-size: 40px;
+    font-size: 35px;
   }
 
   .sub-heading {
-    font-size: 20px;
-    width: 400px;
+    font-size: 18px;
+    width: 350px;
   }
 
   /* Based In Section */
 
   #based-in {
     width: 100vw;
+  }
+
+  #based-in .container .left img {
+    width: 300px;
   }
 
   .container {
@@ -61,6 +74,8 @@
 
   .approach {
     margin-bottom: 50px;
+    width: 350px;
+    height: 300px;
   }
 
   .separator {
