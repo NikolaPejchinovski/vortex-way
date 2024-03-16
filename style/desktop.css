@@ -197,6 +197,44 @@ h2 {
   height: 50px;
 }
 
+/* Contact Container */
+.contact-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--primary-color);
+  z-index: 10000;
+  animation: contact 0.5s ease-in-out;
+}
+
+@keyframes contact {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  background: transparent;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
 /* Header */
 header {
   position: fixed;
@@ -215,7 +253,7 @@ header nav {
   justify-content: space-between;
   align-items: center;
   background-color: var(--navbar);
-  width: 500px;
+  width: 450px;
   height: 70px;
   padding: 0 20px;
   border-radius: 45px;
@@ -285,8 +323,9 @@ header nav.scrolled {
   padding: 0 200px;
 }
 
-.container .left img {
+#based-in .container .left img {
   width: 400px;
+  opacity: 0.8;
 }
 
 .container .right {
@@ -390,6 +429,7 @@ header nav.scrolled {
   font-size: 52px;
   padding: 5px;
   z-index: 2;
+  filter: brightness(1.015);
 }
 
 .approach-number:nth-child(1) {

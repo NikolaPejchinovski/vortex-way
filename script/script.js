@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const logo = document.querySelectorAll(".logo");
   const nav = document.querySelector("header nav");
   const globe = document.querySelector(".globe");
+  const contactBtns = document.querySelectorAll(".contact-btn");
+  const closeBtn = document.querySelector(".close-btn");
+  const contactContainer = document.querySelector(".contact-container");
   const video = document.getElementById("bg-video");
   const usMap = document.querySelector(".container .left img");
   const modeIcon = document.querySelector(".mode-switch .icon");
@@ -17,6 +20,18 @@ document.addEventListener("DOMContentLoaded", function () {
     sy = 0;
   let dx = sx, // For container positions
     dy = sy;
+
+  contactBtns.forEach((btn) =>
+    btn.addEventListener(
+      "click",
+      () => (contactContainer.style.display = "block")
+    )
+  );
+
+  closeBtn.addEventListener(
+    "click",
+    () => (contactContainer.style.display = "none")
+  );
 
   function updateBodyHeight() {
     body.style.height =
@@ -88,10 +103,14 @@ document.addEventListener("DOMContentLoaded", function () {
   modeBtn.addEventListener("click", handleModeChange);
 
   window.addEventListener("scroll", () => {
-    const scale = clamp(window.scrollY / 200, 1.5, 4);
-    console.log(scale);
+    const scale = clamp(window.scrollY / 200, 1.5, 3.5);
     if (window.scrollY > 100) {
-      video.style.transform = `scale(${scale})`;
+      if (isNotMobile()) {
+        video.style.transform = `scale(${scale})`;
+        lightMode
+          ? (video.style.opacity = "0.28")
+          : (video.style.opacity = "0.12");
+      }
       nav.classList.add("scrolled");
     } else {
       nav.classList.remove("scrolled");
@@ -105,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
       usMap.classList.add("invert");
       video.classList.add("invert");
       globe.classList.add("invert");
-      video.style.opacity = "0.18";
+      video.style.opacity = "0.24";
       root.style.setProperty("--primary-color", "#e8e8e8");
       root.style.setProperty("--secondary-color", "#080808");
       root.style.setProperty("--navbar", "#FFFFFF");
@@ -146,3 +165,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Utility functions
 const clamp = (number, min, max) => Math.min(Math.max(number, min), max);
+
+// Check if the screen width is greater than a certain threshold (considered non-mobile)
+function isNotMobile() {
+  return window.innerWidth > 768;
+}

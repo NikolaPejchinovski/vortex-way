@@ -1,0 +1,44 @@
+@media only screen and (max-width: 768px) {
+  /* Bg Video */
+
+  #bg-video {
+    transform: scale(4);
+  }
+
+  section {
+    width: 100vw;
+  }
+
+  /* Header */
+  header nav {
+    background: transparent;
+    width: 100vw;
+    padding: 0 30px;
+  }
+
+  header nav.scrolled {
+    padding: 0 30px;
+  }
+
+  /* Hero Section */
+
+  .main-heading {
+    font-size: 40px;
+  }
+
+  .sub-heading {
+    font-size: 20px;
+    width: 400px;
+  }
+
+  /* Based In Section */
+
+  #based-in {
+    width: 100vw;
+  }
+
+  .container {
+    flex-direction: column;
+    padding: 0 30px;
+  }
+}
