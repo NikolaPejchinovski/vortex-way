@@ -1,0 +1,6 @@
+/* Big landscape tablets */
+@media (min-width: 1024px) {
+  #bg-video {
+    transform: scale(3);
+  }
+}

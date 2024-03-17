@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", () => {
     const scale = clamp(window.scrollY / 200, 1.5, 3.5);
     if (window.scrollY > 100) {
-      if (isNotMobile()) {
+      if (isNotMobile() || isNotTablet()) {
         video.style.transform = `scale(${scale})`;
         lightMode
           ? (video.style.opacity = "0.28")
@@ -169,4 +169,9 @@ const clamp = (number, min, max) => Math.min(Math.max(number, min), max);
 // Check if the screen width is greater than a certain threshold (considered non-mobile)
 function isNotMobile() {
   return window.innerWidth > 768;
+}
+
+// Check if the screen width is greater than a certain threshold (considered non-tablet)
+function isNotTablet() {
+  return window.innerWidth > 1025;
 }

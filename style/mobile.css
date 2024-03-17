@@ -136,6 +136,23 @@
     padding: 0 120px;
   }
 
+  #section2 .container {
+    margin: 50px 0;
+    justify-content: center;
+  }
+
+  #section2 .container:nth-child(2) {
+    justify-content: center;
+  }
+
+  #section2 .container h1 {
+    font-size: 35px;
+  }
+
+  #section2 .container h2 {
+    font-size: 18px;
+  }
+
   .separator {
     display: none;
   }
@@ -158,5 +175,15 @@
   .approach {
     justify-content: flex-start;
     margin-bottom: 50px;
+  }
+
+  #cta .container {
+    flex-direction: column-reverse;
+  }
+
+  #cta .container .left {
+    text-align: center;
+    width: 90vw;
+    margin-right: 0px;
   }
 }
