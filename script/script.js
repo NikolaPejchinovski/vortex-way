@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
       usMap.classList.add("invert");
       video.classList.add("invert");
       globe.classList.add("invert");
-      video.style.opacity = "0.24";
+      video.style.opacity = "0.55";
       root.style.setProperty("--primary-color", "#e8e8e8");
       root.style.setProperty("--secondary-color", "#080808");
       root.style.setProperty("--navbar", "#FFFFFF");

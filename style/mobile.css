@@ -29,6 +29,25 @@
     padding: 0 20px;
   }
 
+  .logo {
+    background: url(../img/logo-nav.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 150px;
+    height: 150px;
+  }
+
+  nav.scrolled .logo {
+    background: url(../img/logo-nav.svg);
+    background: url(../img/logo-nav.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 150px;
+    height: 150px;
+  }
+
   /* Hero Section */
 
   .main-heading {
@@ -63,11 +82,11 @@
   /* Section 2 */
 
   #section2 .container h1 {
-    width: 400px;
+    width: 90vw;
   }
 
   #section2 .container h2 {
-    width: 400px;
+    width: 90vw;
   }
 
   /* Our Approach */
@@ -97,17 +116,22 @@
 
   #cta .container .left {
     text-align: center;
-    width: 600px;
+    width: 90vw;
     margin-right: 0px;
+  }
+
+  #cta .container .right img {
+    width: 300px;
   }
 
   footer {
     text-align: center;
+    height: 400px;
   }
 }
 
 /* Landscape mode */
-@media only screen and (device-width: 932px) and (device-height: 430px) and (orientation: landscape) {
+@media only screen and (max-width: 1300px) and (max-height: 430px) and (orientation: landscape) {
   .container {
     padding: 0 120px;
   }
