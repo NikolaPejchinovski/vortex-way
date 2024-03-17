@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const modeBtn = document.querySelector(".mode-switch");
   const logo = document.querySelectorAll(".logo");
+  const logoCTA = document.querySelector("#cta img");
   const nav = document.querySelector("header nav");
   const globe = document.querySelector(".globe");
   const contactBtns = document.querySelectorAll(".contact-btn");
@@ -104,13 +105,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", () => {
     const scale = clamp(window.scrollY / 200, 1.5, 3.5);
-    if (window.scrollY > 100) {
-      if (isNotMobile() || isNotTablet()) {
-        video.style.transform = `scale(${scale})`;
-        lightMode
-          ? (video.style.opacity = "0.28")
-          : (video.style.opacity = "0.12");
-      }
+    if (window.scrollY > 100 && isNotMobile() && isNotTablet()) {
+      video.style.transform = `scale(${scale})`;
+      lightMode
+        ? (video.style.opacity = "0.28")
+        : (video.style.opacity = "0.12");
+
       nav.classList.add("scrolled");
     } else {
       nav.classList.remove("scrolled");
@@ -122,6 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (lightMode) {
       logo.forEach((l) => l.classList.add("invert"));
       usMap.classList.add("invert");
+      logoCTA.classList.add("invert");
       video.classList.add("invert");
       globe.classList.add("invert");
       video.style.opacity = "0.55";
@@ -142,6 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       logo.forEach((l) => l.classList.remove("invert"));
       usMap.classList.remove("invert");
+      logoCTA.classList.remove("invert");
       video.classList.remove("invert");
       globe.classList.remove("invert");
       video.style.opacity = "0.1";

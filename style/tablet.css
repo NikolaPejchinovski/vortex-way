@@ -1,6 +1,59 @@
-/* Big landscape tablets */
-@media (min-width: 1024px) {
+/* 
+  Media query for big landscape tablets with a minimum width of 1024 pixels.
+  Adjustments to layout and styles to enhance user experience on tablets.
+*/
+@media (max-width: 1024px) {
+  /* 
+      Scale the background video to enhance visual experience on tablets.
+      Adjust the scale to 3x for better viewing.
+    */
   #bg-video {
     transform: scale(3);
+  }
+
+  /* 
+      Adjust margin at the bottom of the 'approach' section to improve spacing.
+    */
+  .approach {
+    margin-bottom: 50px;
+  }
+
+  /* 
+      Hide the middle line to declutter the layout on tablets.
+    */
+  .middle-line {
+    display: none;
+  }
+
+  /* 
+      Hide the approach number to simplify the layout on tablets.
+    */
+  .approach-number {
+    display: none;
+  }
+
+  /* 
+      Adjust padding for the steps container to optimize content display on tablets.
+    */
+  .steps-container .container {
+    padding: 0 60px;
+  }
+
+  /* 
+      Reorder the elements in the call-to-action section for better readability on tablets.
+    */
+  #cta .container {
+    flex-direction: column-reverse;
+  }
+
+  /* 
+      Center align text in the left container of the call-to-action section on tablets.
+    */
+  #cta .container .left {
+    text-align: center;
+  }
+
+  footer {
+    height: 60vh;
   }
 }

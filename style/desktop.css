@@ -1,6 +1,4 @@
 /* Font Imports */
-@import url("https://fonts.googleapis.com/css2?family=Balthazar&family=Poppins:wght@200;400;600;800&display=swap");
-
 @font-face {
   font-family: "GT Ultra";
   src: url("../fonts/GTUltra/GTUltraFine-Bold.otf") format("opentype");
@@ -66,7 +64,8 @@ section {
 }
 
 .invert {
-  filter: invert();
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
 }
 
 h1 {
@@ -111,37 +110,53 @@ h2 {
 
 .line:nth-child(1) {
   left: calc(50% - 3 * 20%); /* Centering the first line */
+  -webkit-animation-delay: 1s;
   animation-delay: 1s;
 }
 
 .line:nth-child(2) {
   left: calc(50% - 2 * 20%); /* Positioning the second line */
+  -webkit-animation-delay: 3s;
   animation-delay: 3s;
 }
 
 .line:nth-child(3) {
   left: calc(50% - 1 * 20%); /* Positioning the third line */
+  -webkit-animation-delay: 2.5s;
   animation-delay: 2.5s;
 }
 
 .line:nth-child(4) {
   left: 50%; /* Positioning the fourth line (center) */
+  -webkit-animation-delay: 4s;
   animation-delay: 4s;
 }
 
 .line:nth-child(5) {
   left: calc(50% + 1 * 20%); /* Positioning the fifth line */
+  -webkit-animation-delay: 3s;
   animation-delay: 3s;
 }
 
 .line:nth-child(6) {
   left: calc(50% + 2 * 20%); /* Positioning the sixth line */
+  -webkit-animation-delay: 5s;
   animation-delay: 5s;
 }
 
 .line:nth-child(7) {
   left: calc(50% + 3 * 20%); /* Positioning the seventh line */
+  -webkit-animation-delay: 2.2s;
   animation-delay: 2.2s;
+}
+
+@-webkit-keyframes drop {
+  0% {
+    top: -50%;
+  }
+  100% {
+    top: 110%;
+  }
 }
 
 @keyframes drop {
@@ -164,6 +179,7 @@ h2 {
   opacity: 0.1;
   transition: 1s ease-in-out;
   min-width: 100vw;
+  -webkit-transform: scale(1.5);
   transform: scale(1.5);
 }
 
@@ -207,7 +223,91 @@ h2 {
   height: 100vh;
   background-color: var(--primary-color);
   z-index: 10000;
+  -webkit-animation: contact 0.5s ease-in-out;
   animation: contact 0.5s ease-in-out;
+}
+
+.contact-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 9999; /* Ensure the form is on top of other content */
+}
+
+.contact-form {
+  background-color: var(
+    --primary-color
+  ); /* Use primary color for the form background */
+  padding: 20px;
+  border: 1px solid var(--border);
+  width: 450px;
+  max-width: 90%;
+  padding: 50px;
+}
+
+.contact-form h2 {
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  color: var(--secondary-color); /* Use secondary color for the heading */
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 5px;
+  color: var(--secondary-color); /* Use secondary color for labels */
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  color: var(--secondary-color);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border);
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form small {
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  color: var(--secondary-color);
+  opacity: 0.5;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 10px;
+  color: var(--secondary-color);
+  background-color: transparent;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.contact-form button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+@-webkit-keyframes contact {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes contact {
@@ -241,6 +341,7 @@ header {
   position: fixed;
   top: 50px;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   display: flex;
   height: 100px;
@@ -368,7 +469,19 @@ header nav.scrolled {
 
 .reveal {
   line-height: 35px;
+  -webkit-animation: reveal 1s ease-out forwards;
   animation: reveal 1s ease-out forwards;
+}
+
+@-webkit-keyframes reveal {
+  from {
+    opacity: 0;
+    line-height: 100px; /* Starting line height */
+  }
+  to {
+    opacity: 1;
+    line-height: 55px; /* Final line height */
+  }
 }
 
 @keyframes reveal {
@@ -428,6 +541,7 @@ header nav.scrolled {
   position: absolute;
   top: 0;
   left: 50%;
+  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   width: 50px;
   height: 100%;
@@ -443,6 +557,7 @@ header nav.scrolled {
 
 .approach-number {
   position: absolute;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   background: var(--primary-color);
   font-size: 52px;
@@ -501,6 +616,7 @@ header nav.scrolled {
 /* CTA */
 
 #cta .container {
+  -webkit-flex-direction: row-reverse;
   flex-direction: row-reverse;
   justify-content: space-between;
   padding: 0 200px;
@@ -542,7 +658,7 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 40px;
-  height: 350px;
+  height: 50vh;
   border-top: 1px solid var(--border);
   font-family: "Poppins", sans-serif;
   text-transform: uppercase;
@@ -559,4 +675,19 @@ footer {
   height: 64px;
   background-image: url(../img/earth.gif);
   background-size: contain;
+}
+
+/* Smaller screens */
+@media (max-width: 1400px) {
+  /* 
+    Hide separators, middle lines, and approach numbers to simplify layout on smartphones.
+  */
+  .middle-line,
+  .approach-number {
+    display: none;
+  }
+
+  .approach {
+    margin-bottom: 50px;
+  }
 }
