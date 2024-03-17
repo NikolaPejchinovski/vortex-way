@@ -105,3 +105,34 @@
     text-align: center;
   }
 }
+
+/* Landscape mode */
+@media only screen and (device-width: 932px) and (device-height: 430px) and (orientation: landscape) {
+  .container {
+    padding: 0 120px;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .line-container {
+    position: absolute;
+    top: 0;
+    left: 80%;
+    z-index: -3;
+  }
+
+  .middle-line {
+    z-index: -3;
+  }
+
+  .approach-number {
+    z-index: -2;
+  }
+
+  .approach {
+    justify-content: flex-start;
+    margin-bottom: 50px;
+  }
+}
