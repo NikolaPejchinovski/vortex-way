@@ -386,6 +386,10 @@ header nav.scrolled {
   padding: 0 60px;
 }
 
+header nav.scrolled .contact-btn {
+  border-radius: 0px;
+}
+
 .contact-btn {
   background-color: transparent;
   color: var(--secondary-color);
@@ -396,6 +400,7 @@ header nav.scrolled {
   height: 50px;
   width: 100px;
   cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 
 .contact-btn:hover {

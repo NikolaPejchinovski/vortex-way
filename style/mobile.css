@@ -67,13 +67,15 @@
   /* 
     Adjust heading sizes and width for improved readability on smartphones.
   */
+
   .main-heading {
     font-size: 35px;
+    width: 90vw;
   }
 
   .sub-heading {
     font-size: 18px;
-    width: 350px;
+    width: 90vw;
   }
 
   /* 
@@ -121,6 +123,10 @@
   .middle-line,
   .approach-number {
     display: none;
+  }
+
+  .approach {
+    width: 90vw;
   }
 
   /* 
@@ -190,7 +196,6 @@
   /* 
     Hide separators, middle lines, and approach numbers to simplify layout on devices in landscape orientation.
   */
-  .separator,
   .line-container,
   .middle-line,
   .approach-number {
@@ -216,5 +221,10 @@
 
   footer {
     height: 90vh;
+    gap: 10px;
+  }
+
+  .copyright {
+    font-size: 12px;
   }
 }

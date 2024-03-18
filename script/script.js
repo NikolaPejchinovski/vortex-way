@@ -105,12 +105,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", () => {
     const scale = clamp(window.scrollY / 200, 1.5, 3.5);
-    if (window.scrollY > 100 && isNotMobile() && isNotTablet()) {
-      video.style.transform = `scale(${scale})`;
-      lightMode
-        ? (video.style.opacity = "0.28")
-        : (video.style.opacity = "0.12");
-
+    if (window.scrollY > 100 && isNotMobile()) {
+      if (isNotTablet()) {
+        video.style.transform = `scale(${scale})`;
+        lightMode
+          ? (video.style.opacity = "0.28")
+          : (video.style.opacity = "0.12");
+      }
       nav.classList.add("scrolled");
     } else {
       nav.classList.remove("scrolled");
