@@ -64,6 +64,10 @@
     height: 150px;
   }
 
+  .contact-btn {
+    border-radius: 0px;
+  }
+
   /* 
     Adjust heading sizes and width for improved readability on smartphones.
   */
