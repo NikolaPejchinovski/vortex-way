@@ -533,7 +533,7 @@ header nav.scrolled .contact-btn {
   padding: 30px;
   color: #e8e8e8;
   font-weight: 200;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(232, 232, 232, 0.3);
   opacity: 1;
 }
 
