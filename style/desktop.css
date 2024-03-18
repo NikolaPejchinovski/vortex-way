@@ -76,6 +76,88 @@ h2 {
   font-size: 30px;
 }
 
+/* Intro */
+
+.intro-container {
+  position: fixed;
+  background-color: #080808;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center;
+  z-index: 200000;
+  animation: fadeIn 2s ease-out forwards 2s, hide 0.1s forwards 3.2s; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes hide {
+  to {
+    visibility: hidden;
+  }
+}
+
+.only-vortex {
+  width: 0px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: vortexIn 0.5s ease-in forwards 0.5s;
+}
+
+.only-star {
+  width: 0px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: starIn 0.5s ease-in forwards 1s;
+}
+
+.logo-elements {
+  width: 100%;
+  height: 100%;
+  animation: rotate 0.5s ease-in-out forwards 1s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes starIn {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 50px;
+  }
+}
+
+@keyframes vortexIn {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 300px;
+  }
+}
+
 /* Lines */
 .lines {
   display: flex;
