@@ -167,6 +167,32 @@
   Adjustments to layout and styles for improved user experience on devices in landscape orientation.
 */
 @media only screen and (max-width: 1300px) and (max-height: 430px) and (orientation: landscape) {
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+    width: 100%;
+    height: 90vh;
+    padding: 10px;
+  }
+
+  .contact-form h2 {
+    margin-bottom: 10px;
+  }
+
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form input[type="tel"],
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    color: var(--secondary-color);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border);
+    height: 35px;
+  }
   /* 
     Adjust container padding for better layout on devices in landscape orientation.
   */
