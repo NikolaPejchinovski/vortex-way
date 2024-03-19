@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const line = document.querySelectorAll(".line");
   const h1 = document.querySelector(".main-heading");
   const root = document.documentElement;
+  let scrollSpeed = !isNotMobile() ? 0.04 : 0.07;
   let lightMode = false;
 
   const body = document.body;
@@ -56,8 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", easeScroll);
 
   function easeScroll() {
-    var scrollSpeed = !isNotMobile() ? 0.04 : 0.07;
-
     sx = window.pageXOffset;
     sy = window.pageYOffset;
   }
