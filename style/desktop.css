@@ -146,7 +146,7 @@ h2 {
     width: 0px;
   }
   100% {
-    width: 50px;
+    width: 70px;
   }
 }
 
@@ -477,8 +477,10 @@ header nav.scrolled .contact-btn {
   background-color: transparent;
   color: var(--secondary-color);
   font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
   border: none;
   border-radius: 45px;
+  padding: 5px;
   border: 1px solid var(--secondary-color);
   height: 50px;
   width: 100px;
@@ -510,6 +512,7 @@ header nav.scrolled .contact-btn {
   text-align: center;
   padding: 0px;
   margin-bottom: 20px;
+  text-shadow: 1px 1px 15px rgba(255, 255, 255, 1);
 }
 
 .sub-heading {

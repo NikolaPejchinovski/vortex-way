@@ -254,6 +254,10 @@
     margin-right: 0px;
   }
 
+  #cta .contact-btn {
+    display: none;
+  }
+
   footer {
     height: 90vh;
     gap: 10px;

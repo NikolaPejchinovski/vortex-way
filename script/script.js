@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const usMap = document.querySelector(".container .left img");
   const modeIcon = document.querySelector(".mode-switch .icon");
   const line = document.querySelectorAll(".line");
+  const h1 = document.querySelector(".main-heading");
   const root = document.documentElement;
   let lightMode = false;
 
@@ -55,6 +56,8 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", easeScroll);
 
   function easeScroll() {
+    var scrollSpeed = !isNotMobile() ? 0.04 : 0.07;
+
     sx = window.pageXOffset;
     sy = window.pageYOffset;
   }
@@ -63,8 +66,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function render() {
     // We calculate our container position by linear interpolation method
-    dx = li(dx, sx, 0.07);
-    dy = li(dy, sy, 0.07);
+    dx = li(dx, sx, scrollSpeed);
+    dy = li(dy, sy, scrollSpeed);
 
     dx = Math.floor(dx * 100) / 100;
     dy = Math.floor(dy * 100) / 100;
@@ -80,26 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Update body height on resize
   window.addEventListener("resize", updateBodyHeight);
-
-  // Mouse hover text effect
-  var h1 = document.querySelector(".main-heading");
-  document.addEventListener("mousemove", function (e) {
-    var rXP = (e.pageX - h1.offsetLeft - h1.offsetWidth / 2) / 70; // Adjusted scaling factor
-    var rYP = (e.pageY - h1.offsetTop - h1.offsetHeight / 2) / 70; // Adjusted scaling factor
-    h1.style.textShadow =
-      rYP +
-      "px " +
-      rXP +
-      "px 10px rgba(255,255,255,.3), " + // Added blur radius
-      rYP / 2 +
-      "px " +
-      rXP / 2 +
-      "px 10px rgba(255,255,255,0.3), " + // Added blur radius
-      rXP / 2 +
-      "px " +
-      rYP +
-      "px 10px rgba(255,255,255,.3)"; // Added blur radius
-  });
 
   modeBtn.addEventListener("click", handleModeChange);
 
