@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Scroll to the top of the page on page reload
   window.addEventListener("load", function () {
     window.scrollTo(0, 0);
+    video.play();
   });
 
   let sx = 0, // For scroll positions
