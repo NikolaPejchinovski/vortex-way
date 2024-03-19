@@ -782,15 +782,6 @@ footer {
   text-align: center;
 }
 
-.email {
-  position: absolute;
-  bottom: 20px;
-  left: 10%;
-  font-weight: 200;
-  font-size: 16px;
-  transition: 0.1s ease-in-out;
-}
-
 .email a {
   text-decoration: none;
   color: var(--secondary-color);

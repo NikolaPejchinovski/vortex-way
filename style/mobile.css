@@ -183,22 +183,12 @@
   }
 
   .footer-content {
-    justify-content: flex-start;
-    margin-top: 50px;
+    justify-content: center;
+    margin-top: -30px;
   }
 
   .footer-text {
     width: 90vw;
-  }
-
-  .email {
-    position: absolute;
-    bottom: 80px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-weight: 200;
-    font-size: 16px;
-    transition: 0.1s ease-in-out;
   }
 
   .copyright {
@@ -211,7 +201,7 @@
 
   footer hr {
     position: absolute;
-    bottom: 120px;
+    bottom: 80px;
     border-color: var(--border);
     width: 90%;
   }
