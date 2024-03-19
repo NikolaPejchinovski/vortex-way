@@ -9,246 +9,240 @@
     <link rel="icon" type="image/x-icon" href="/img/logo icon.svg" />
     <title>Vortex Way</title>
   </head>
-  <div id="scrollWrapper">
-    <body id="my-scrollbar">
-      <!-- Intro -->
-      <div class="intro-container">
-        <div class="logo-elements">
-          <img src="./img/logo-no-star.svg" alt="" class="only-vortex" />
-          <img src="./img/logo-star.svg" alt="" class="only-star" />
+  <body id="my-scrollbar">
+    <!-- Intro -->
+    <div class="intro-container">
+      <div class="logo-elements">
+        <img src="./img/logo-no-star.svg" alt="" class="only-vortex" />
+        <img src="./img/logo-star.svg" alt="" class="only-star" />
+      </div>
+    </div>
+    <!-- Background Video -->
+    <video autoplay id="bg-video" muted loop playsinline>
+      <source src="./img/vortex.mp4" type="video/mp4" />
+    </video>
+    <!-- Background Lines -->
+    <div class="lines">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <!-- Dark/Light Mode Switch -->
+    <button class="mode-switch"><div class="icon"></div></button>
+    <!-- Contact Form -->
+    <div class="contact-container" style="display: none">
+      <button class="close-btn">Close</button>
+      <div class="contact-form-container">
+        <div class="contact-form">
+          <h2>Get in Touch</h2>
+          <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" />
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <small
+              >WE ARE FULLY COMMITTED TO THE SAFEGUARDING OF YOUR PRIVACY,
+              ALIGNING SEAMLESSLY WITH THE HIGHEST STANDARDS IN
+              CYBERSECURITY.</small
+            >
+            <button type="submit">Submit</button>
+          </form>
         </div>
       </div>
-      <!-- Background Video -->
-      <video autoplay id="bg-video" muted loop playsinline>
-        <source src="./img/vortex.mp4" type="video/mp4" />
-      </video>
-      <!-- Background Lines -->
-      <div class="lines">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
-      <!-- Dark/Light Mode Switch -->
-      <button class="mode-switch"><div class="icon"></div></button>
-      <!-- Contact Form -->
-      <div class="contact-container" style="display: none">
-        <button class="close-btn">Close</button>
-        <div class="contact-form-container">
-          <div class="contact-form">
-            <h2>Get in Touch</h2>
-            <form>
-              <label for="name">Name:</label>
-              <input type="text" id="name" name="name" required />
-
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required />
-
-              <label for="phone">Phone:</label>
-              <input type="tel" id="phone" name="phone" />
-
-              <label for="message">Message:</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                required
-              ></textarea>
-              <small
-                >WE ARE FULLY COMMITTED TO THE SAFEGUARDING OF YOUR PRIVACY,
-                ALIGNING SEAMLESSLY WITH THE HIGHEST STANDARDS IN
-                CYBERSECURITY.</small
-              >
-              <button type="submit">Submit</button>
-            </form>
+    </div>
+    <!-- Header -->
+    <header>
+      <nav>
+        <div class="logo"></div>
+        <button class="contact-btn">Contact Us</button>
+      </nav>
+    </header>
+    <div id="scroll">
+      <!-- Main -->
+      <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+          <h1 class="main-heading reveal">
+            <div>Optimizing Abilities,</div>
+            <div><span>Innovating Solutions.</span></div>
+          </h1>
+          <h2 class="sub-heading">
+            We tackle the globe's hardest challenges with superior strategies.
+          </h2>
+        </section>
+        <!-- Based In -->
+        <section id="based-in">
+          <div class="container">
+            <div class="left">
+              <img src="./img/us-map.svg" alt="us-map" />
+            </div>
+            <div class="right">
+              <h1>Based in the U.S.</h1>
+              <h2>
+                Our excellence resonates worldwide, transcending boundaries.
+              </h2>
+            </div>
           </div>
-        </div>
-      </div>
-      <!-- Header -->
-      <header>
-        <nav>
-          <div class="logo"></div>
-          <button class="contact-btn">Contact Us</button>
-        </nav>
-      </header>
-      <div id="scroll">
-        <!-- Main -->
-        <main>
-          <!-- Hero Section -->
-          <section class="hero-section">
-            <h1 class="main-heading reveal">
-              <div>Optimizing Abilities,</div>
-              <div><span>Innovating Solutions.</span></div>
-            </h1>
-            <h2 class="sub-heading">
-              We tackle the globe's hardest challenges with superior strategies.
-            </h2>
-          </section>
-          <!-- Based In -->
-          <section id="based-in">
-            <div class="container">
-              <div class="left">
-                <img src="./img/us-map.svg" alt="us-map" />
-              </div>
-              <div class="right">
-                <h1>Based in the U.S.</h1>
-                <h2>
-                  Our excellence resonates worldwide, transcending boundaries.
-                </h2>
-              </div>
+        </section>
+        <!-- Section 2 -->
+        <section id="section2">
+          <div class="container">
+            <div class="left">
+              <h1>
+                Our international influence underscores our dedication to global
+                stability and homeland protection.
+              </h1>
             </div>
-          </section>
-          <!-- Section 2 -->
-          <section id="section2">
-            <div class="container">
-              <div class="left">
-                <h1>
-                  Our international influence underscores our dedication to
-                  global stability and homeland protection.
-                </h1>
-              </div>
+          </div>
+          <div class="container">
+            <div class="right">
+              <h2>
+                We prioritize collaboration, building powerful alliances across
+                governments, militaries, defense sectors, global bodies, and
+                other organizations.
+              </h2>
+            </div>
+          </div>
+        </section>
+        <section id="our-approach">
+          <div class="heading-container">
+            <h1>Our Approach</h1>
+          </div>
+          <div class="steps-container">
+            <div class="line-container">
+              <div class="approach-number">1</div>
+              <div class="approach-number">2</div>
+              <div class="approach-number">3</div>
+              <div class="approach-number">4</div>
+              <div class="approach-number">5</div>
+              <div class="approach-number">6</div>
+              <div class="approach-number">7</div>
+              <div class="middle-line"></div>
             </div>
             <div class="container">
-              <div class="right">
-                <h2>
-                  We prioritize collaboration, building powerful alliances
-                  across governments, militaries, defense sectors, global
-                  bodies, and other organizations.
-                </h2>
+              <div class="approach">
+                <div class="approach-text">
+                  <h3>Identifying Challenges</h3>
+                  <p>
+                    We begin by understanding our clients' unique challenges,
+                    leveraging deep industry insights to identify impactful
+                    areas.
+                  </p>
+                </div>
               </div>
+              <div class="separator"></div>
             </div>
-          </section>
-          <section id="our-approach">
-            <div class="heading-container">
-              <h1>Our Approach</h1>
-            </div>
-            <div class="steps-container">
-              <div class="line-container">
-                <div class="approach-number">1</div>
-                <div class="approach-number">2</div>
-                <div class="approach-number">3</div>
-                <div class="approach-number">4</div>
-                <div class="approach-number">5</div>
-                <div class="approach-number">6</div>
-                <div class="approach-number">7</div>
-                <div class="middle-line"></div>
-              </div>
-              <div class="container">
-                <div class="approach">
-                  <div class="approach-text">
-                    <h3>Identifying Challenges</h3>
-                    <p>
-                      We begin by understanding our clients' unique challenges,
-                      leveraging deep industry insights to identify impactful
-                      areas.
-                    </p>
-                  </div>
-                </div>
-                <div class="separator"></div>
-              </div>
-              <div class="container">
-                <div class="separator"></div>
-                <div class="approach">
-                  <div class="approach-text">
-                    <h3>Collaborative Strategy</h3>
-                    <p>
-                      We work closely with clients and partners, crafting
-                      forward-thinking strategies that benefit from diverse
-                      perspectives and expertise.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="container">
-                <div class="approach">
-                  <div class="approach-text">
-                    <h3>Innovative Solutions</h3>
-                    <p>
-                      Leveraging cutting-edge technology and strategies, we
-                      create custom solutions to meet specific challenges,
-                      ensuring we stay ahead of the curve.
-                    </p>
-                  </div>
-                </div>
-                <div class="separator"></div>
-              </div>
-              <div class="container">
-                <div class="separator"></div>
-                <div class="approach">
-                  <div class="approach-text">
-                    <h3>Deployment and Support</h3>
-                    <p>
-                      We offer a broad range of services and products, ensuring
-                      smooth deployment and ongoing support to maintain
-                      effectiveness and satisfaction.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="container">
-                <div class="approach">
-                  <div class="approach-text">
-                    <h3>Continuous Improvement</h3>
-                    <p>
-                      We’re committed to ongoing learning and refining our
-                      strategies based on feedback, ensuring our clients and
-                      partners have the best tools.
-                    </p>
-                  </div>
-                </div>
-                <div class="separator"></div>
-              </div>
-              <div class="container">
-                <div class="separator"></div>
-                <div class="approach">
-                  <div class="approach-text">
-                    <h3>Global Impact, <br />Local Touch</h3>
-                    <p>
-                      Our global operations are tailored to each local context,
-                      allowing us to be globally impactful yet locally relevant.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="container">
-                <div class="approach">
-                  <div class="approach-text">
-                    <h3>Excellence and Security</h3>
-                    <p>
-                      Guided by a commitment to excellence and security, we
-                      operate with great responsibility.
-                    </p>
-                  </div>
-                </div>
-                <div class="separator"></div>
-              </div>
-            </div>
-          </section>
-          <section id="cta">
             <div class="container">
-              <div class="left">
-                <h1>
-                  A Leader in Pioneering Solutions for Tomorrow’s Challenges.
-                </h1>
-                <h2>
-                  Our team of innovators is devoted to tackling the world's most
-                  formidable challenges. Through unparalleled strategies, we are
-                  dedicated to delivering solutions that truly make a
-                  difference.
-                </h2>
-                <button class="contact-btn">Contact Us</button>
-              </div>
-              <div class="right">
-                <img src="./img/logo icon.svg" alt="vortex-way-logo" />
+              <div class="separator"></div>
+              <div class="approach">
+                <div class="approach-text">
+                  <h3>Collaborative Strategy</h3>
+                  <p>
+                    We work closely with clients and partners, crafting
+                    forward-thinking strategies that benefit from diverse
+                    perspectives and expertise.
+                  </p>
+                </div>
               </div>
             </div>
-          </section>
-        </main>
-        <!-- Footer -->
-        <footer>
+            <div class="container">
+              <div class="approach">
+                <div class="approach-text">
+                  <h3>Innovative Solutions</h3>
+                  <p>
+                    Leveraging cutting-edge technology and strategies, we create
+                    custom solutions to meet specific challenges, ensuring we
+                    stay ahead of the curve.
+                  </p>
+                </div>
+              </div>
+              <div class="separator"></div>
+            </div>
+            <div class="container">
+              <div class="separator"></div>
+              <div class="approach">
+                <div class="approach-text">
+                  <h3>Deployment and Support</h3>
+                  <p>
+                    We offer a broad range of services and products, ensuring
+                    smooth deployment and ongoing support to maintain
+                    effectiveness and satisfaction.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="approach">
+                <div class="approach-text">
+                  <h3>Continuous Improvement</h3>
+                  <p>
+                    We’re committed to ongoing learning and refining our
+                    strategies based on feedback, ensuring our clients and
+                    partners have the best tools.
+                  </p>
+                </div>
+              </div>
+              <div class="separator"></div>
+            </div>
+            <div class="container">
+              <div class="separator"></div>
+              <div class="approach">
+                <div class="approach-text">
+                  <h3>Global Impact, <br />Local Touch</h3>
+                  <p>
+                    Our global operations are tailored to each local context,
+                    allowing us to be globally impactful yet locally relevant.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="approach">
+                <div class="approach-text">
+                  <h3>Excellence and Security</h3>
+                  <p>
+                    Guided by a commitment to excellence and security, we
+                    operate with great responsibility.
+                  </p>
+                </div>
+              </div>
+              <div class="separator"></div>
+            </div>
+          </div>
+        </section>
+        <section id="cta">
+          <div class="container">
+            <div class="left">
+              <h1>
+                A Leader in Pioneering Solutions for Tomorrow’s Challenges.
+              </h1>
+              <h2>
+                Our team of innovators is devoted to tackling the world's most
+                formidable challenges. Through unparalleled strategies, we are
+                dedicated to delivering solutions that truly make a difference.
+              </h2>
+              <button class="contact-btn">Contact Us</button>
+            </div>
+            <div class="right">
+              <img src="./img/logo icon.svg" alt="vortex-way-logo" />
+            </div>
+          </div>
+        </section>
+      </main>
+      <!-- Footer -->
+      <footer>
+        <div class="footer-content">
           <div class="globe"></div>
           <div class="footer-text">
             Our network extends globally, covering diverse<br />locations around
@@ -262,10 +256,10 @@
             COPYRIGHT &copy; 2024 VORTEX WAY LLC.<br />
             ALL RIGHTS RESERVED.
           </div>
-        </footer>
-      </div>
-      <!-- Script -->
-      <script src="./script/script.js"></script>
-    </body>
-  </div>
+        </div>
+      </footer>
+    </div>
+    <!-- Script -->
+    <script src="./script/script.js"></script>
+  </body>
 </html>

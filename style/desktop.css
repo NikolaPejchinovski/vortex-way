@@ -58,6 +58,11 @@ body {
   overflow-x: hidden;
 }
 
+#scroll {
+  margin: 0;
+  padding: 0;
+}
+
 section {
   margin-bottom: 200px;
   width: 100vw;
@@ -81,6 +86,8 @@ h2 {
 .intro-container {
   position: fixed;
   background-color: #080808;
+  top: 0;
+  left: 0;
   display: flex;
   width: 100vw;
   height: 100vh;
@@ -744,17 +751,28 @@ header nav.scrolled .contact-btn {
 
 /* Footer */
 footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  position: relative;
   gap: 20px;
-  height: 50vh;
-  padding-top: 140px;
+  height: 400px;
   border-top: 1px solid var(--border);
   font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   font-weight: 100;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  height: 100%;
+}
+
+.bottom-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .footer-text,
