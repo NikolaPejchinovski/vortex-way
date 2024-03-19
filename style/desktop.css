@@ -750,14 +750,11 @@ footer {
   justify-content: center;
   gap: 20px;
   height: 50vh;
+  padding-top: 140px;
   border-top: 1px solid var(--border);
   font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   font-weight: 100;
-}
-
-.globe {
-  margin-top: -40px;
 }
 
 .footer-text,

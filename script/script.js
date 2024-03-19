@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const line = document.querySelectorAll(".line");
   const h1 = document.querySelector(".main-heading");
   const root = document.documentElement;
-  let scrollSpeed = !isNotMobile() ? 0.1 : 0.07;
+  let scrollSpeed = !isNotMobile() ? 0.12 : 0.07;
   let lightMode = false;
 
   const body = document.body;

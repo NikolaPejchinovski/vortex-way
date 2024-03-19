@@ -27,6 +27,7 @@
   */
   section {
     width: 100vw;
+    margin-bottom: 100px;
   }
 
   /* 
@@ -114,6 +115,11 @@
     text-align: center;
   }
 
+  /* Section 2 */
+  #section2 .container {
+    margin: 0px 0;
+  }
+
   /* 
     Adjust heading widths for better presentation on smartphones.
   */
@@ -170,6 +176,7 @@
     Center align footer text and adjust height for better presentation on smartphones.
   */
   footer {
+    justify-content: flex-start;
     text-align: center;
     height: 70vh;
   }
