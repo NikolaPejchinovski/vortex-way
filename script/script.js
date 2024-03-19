@@ -19,6 +19,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const body = document.body;
   const main = document.getElementById("scroll");
 
+  // Scroll to the top of the page on page reload
+  window.addEventListener("load", function () {
+    window.scrollTo(0, 0);
+  });
+
   let sx = 0, // For scroll positions
     sy = 0;
   let dx = sx, // For container positions
