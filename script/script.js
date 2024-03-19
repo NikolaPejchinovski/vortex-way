@@ -19,6 +19,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const body = document.body;
   const main = document.getElementById("scroll");
 
+  // Check if the page is loaded at a certain point, and if so, scroll to the top
+  window.addEventListener("load", function () {
+    if (window.pageYOffset > 300) {
+      // Adjust the threshold as needed
+      window.scrollTo(0, 0);
+    }
+  });
+
   let sx = 0, // For scroll positions
     sy = 0;
   let dx = sx, // For container positions
