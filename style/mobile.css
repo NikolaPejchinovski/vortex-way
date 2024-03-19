@@ -146,6 +146,10 @@
     margin-right: 0px;
   }
 
+  #cta .contact-btn {
+    display: none;
+  }
+
   /* 
     Adjust image width in the CTA section for better presentation on smartphones.
   */
