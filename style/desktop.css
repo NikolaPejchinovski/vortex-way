@@ -327,6 +327,7 @@ h2 {
 }
 
 .contact-form {
+  position: relative;
   background-color: var(
     --primary-color
   ); /* Use primary color for the form background */
@@ -376,7 +377,7 @@ h2 {
   opacity: 0.5;
 }
 
-.contact-form button {
+.contact-form button[type="submit"] {
   width: 100%;
   padding: 10px;
   color: var(--secondary-color);
@@ -411,8 +412,8 @@ h2 {
 
 .close-btn {
   position: absolute;
-  top: 20px;
-  right: 40px;
+  top: 40px;
+  right: 50px;
   padding: 20px;
   border: 1px solid var(--border);
   color: var(--secondary-color);
