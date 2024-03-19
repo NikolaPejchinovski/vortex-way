@@ -25,16 +25,16 @@ document.addEventListener("DOMContentLoaded", function () {
     dy = sy;
 
   contactBtns.forEach((btn) =>
-    btn.addEventListener(
-      "click",
-      () => (contactContainer.style.display = "block")
-    )
+    btn.addEventListener("click", () => {
+      contactContainer.style.display = "block";
+      toggleScrollLock(true);
+    })
   );
 
-  closeBtn.addEventListener(
-    "click",
-    () => (contactContainer.style.display = "none")
-  );
+  closeBtn.addEventListener("click", () => {
+    contactContainer.style.display = "none";
+    toggleScrollLock(false);
+  });
 
   function updateBodyHeight() {
     body.style.height =
@@ -159,4 +159,14 @@ function isNotMobile() {
 // Check if the screen width is greater than a certain threshold (considered non-tablet)
 function isNotTablet() {
   return window.innerWidth > 1025;
+}
+
+// Function to toggle scroll lock
+function toggleScrollLock(lock) {
+  const body = document.body;
+  if (lock) {
+    body.style.overflow = "hidden";
+  } else {
+    body.style.overflow = "";
+  }
 }
