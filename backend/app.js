@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 
 const app = express();
-const port = 3000;
+const port = 10000;
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
