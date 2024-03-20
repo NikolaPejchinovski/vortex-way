@@ -21,7 +21,7 @@ app.post('/api/send-email', (req, res) => {
   // Create a nodemailer transporter using your email service
   const transporter = nodemailer.createTransport({
     host: 'smtp.stackmail.com',
-    port: 587,
+    port: 465,
     secure: true,
     auth: {
       user: 'info@vortexway.com',
