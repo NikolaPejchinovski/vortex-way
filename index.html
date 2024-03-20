@@ -40,10 +40,12 @@
     <!-- Contact Form -->
     <div class="contact-container" style="display: none">
       <div class="contact-form-container">
+        <div class="success-message" style="display: none;"><strong>Thank you!</strong>
+        <br /><small>Your submission has been sent!</small></div>
         <div class="contact-form">
           <button class="close-btn">Close</button>
           <h2>Get in Touch</h2>
-          <form>
+          <form action="/api/send-email" method="POST">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required />
 

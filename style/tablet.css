@@ -1,1 +1,96 @@
-@media (max-width:1024px){#bg-video{transform:scale(3)}#based-in .container,.steps-container .container{padding:0 60px}.approach{margin-bottom:50px}#section2{display:flex;flex-direction:column;align-items:center}#section2 .container{margin:50px 0;justify-content:center;width:90vw}#section2 .container:nth-child(2){justify-content:center}#section2 .container h1,#section2 .container h2{width:90vw;text-align:center}.approach-number,.middle-line{display:none}#cta .container{flex-direction:column-reverse}#cta .container .left{text-align:center}footer{height:60vh}}
+/* 
+  Media query for big landscape tablets with a minimum width of 1024 pixels.
+  Adjustments to layout and styles to enhance user experience on tablets.
+*/
+@media (max-width: 1024px) {
+  /* 
+      Scale the background video to enhance visual experience on tablets.
+      Adjust the scale to 3x for better viewing.
+    */
+  #bg-video {
+    transform: scale(3);
+  }
+
+  /* Hero Section Padding */
+  #based-in .container {
+    padding: 0 60px;
+  }
+
+  /* 
+      Adjust margin at the bottom of the 'approach' section to improve spacing.
+    */
+  .approach {
+    margin-bottom: 50px;
+  }
+
+  /* 
+    Adjust container margins and justify content for improved alignment on devices
+  */
+
+  #section2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #section2 .container {
+    margin: 50px 0;
+    justify-content: center;
+  }
+
+  #section2 .container:nth-child(2) {
+    justify-content: center;
+  }
+
+  #section2 .container {
+    width: 90vw;
+  }
+
+  #section2 .container h1 {
+    width: 90vw;
+    text-align: center;
+  }
+
+  #section2 .container h2 {
+    width: 90vw;
+    text-align: center;
+  }
+
+  /* 
+      Hide the middle line to declutter the layout on tablets.
+    */
+  .middle-line {
+    display: none;
+  }
+
+  /* 
+      Hide the approach number to simplify the layout on tablets.
+    */
+  .approach-number {
+    display: none;
+  }
+
+  /* 
+      Adjust padding for the steps container to optimize content display on tablets.
+    */
+  .steps-container .container {
+    padding: 0 60px;
+  }
+
+  /* 
+      Reorder the elements in the call-to-action section for better readability on tablets.
+    */
+  #cta .container {
+    flex-direction: column-reverse;
+  }
+
+  /* 
+      Center align text in the left container of the call-to-action section on tablets.
+    */
+  #cta .container .left {
+    text-align: center;
+  }
+
+  footer {
+    height: 60vh;
+  }
+}

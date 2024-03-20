@@ -1,1 +1,186 @@
-document.addEventListener("DOMContentLoaded",function(){let e=document.querySelector(".mode-switch"),t=document.querySelectorAll(".logo"),o=document.querySelector("#cta img"),l=document.querySelector("header nav"),r=document.querySelector(".globe"),n=document.querySelectorAll(".contact-btn"),s=document.querySelector(".close-btn"),i=document.querySelector(".contact-container"),c=document.getElementById("bg-video"),a=document.querySelector(".container .left img"),$=document.querySelector(".mode-switch .icon"),d=document.querySelectorAll(".line");document.querySelector(".main-heading");let y=document.documentElement,g=isNotMobile()?.07:.22,f=!1,u=document.body,m=document.getElementById("scroll");window.addEventListener("load",function(){window.scrollTo(0,0),c.play()});let b=0,p=0,L=b,h=p;function v(){u.style.height=Math.max(m.clientHeight,document.documentElement.scrollHeight,document.body.scrollHeight,document.documentElement.offsetHeight,document.body.offsetHeight)+"px"}function E(){L=S(L,b,g),h=S(h,p,g),L=Math.floor(100*L)/100,h=Math.floor(100*h)/100,m.style.transform=`translate3d(-${L}px, -${h}px, 0px)`,window.requestAnimationFrame(E)}function S(e,t,o){return(1-o)*e+o*t}n.forEach(e=>e.addEventListener("click",()=>{i.style.display="block",toggleScrollLock(!0)})),s.addEventListener("click",()=>{i.style.display="none",toggleScrollLock(!1)}),v(),m.style.cssText="position: fixed; top: 0; left: 0;",window.addEventListener("scroll",function e(){b=window.pageXOffset,p=window.pageYOffset}),window.requestAnimationFrame(E),window.addEventListener("resize",v),e.addEventListener("click",function e(){f=!f;let l=f?"0.55":"0.2",n=f?"#e8e8e8":"#080808",s=f?"#080808":"#e8e8e8",i=f?"#FFFFFF":"#131313",g=f?"rgba(0, 0, 0, 0.3)":"rgba(232, 232, 232, 0.3)",u=f?"linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000000 75%, #000000 100%)":"linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%)";t.forEach(e=>e.classList.toggle("invert",f)),a.classList.toggle("invert",f),o.classList.toggle("invert",f),c.classList.toggle("invert",f),r.classList.toggle("invert",f),c.style.opacity=l,y.style.setProperty("--primary-color",n),y.style.setProperty("--secondary-color",s),y.style.setProperty("--navbar",i),y.style.setProperty("--border",g),$.classList.toggle("light",f),d.forEach(e=>e.style.background=u)}),window.addEventListener("scroll",()=>{let e=clamp(window.scrollY/200,1.5,3.5);window.scrollY>100&&isNotMobile()?(isNotTablet()&&(c.style.transform=`scale(${e})`,f?c.style.opacity="0.55":c.style.opacity="0.2"),l.classList.add("scrolled")):l.classList.remove("scrolled")})});const clamp=(e,t,o)=>Math.min(Math.max(e,t),o);function isNotMobile(){return window.innerWidth>768}function isNotTablet(){return window.innerWidth>1025}function toggleScrollLock(e){document.body.style.overflow=e?"hidden":""}
+document.addEventListener("DOMContentLoaded", function () {
+  const modeBtn = document.querySelector(".mode-switch");
+  const logo = document.querySelectorAll(".logo");
+  const logoCTA = document.querySelector("#cta img");
+  const nav = document.querySelector("header nav");
+  const globe = document.querySelector(".globe");
+  const contactBtns = document.querySelectorAll(".contact-btn");
+  const closeBtn = document.querySelector(".close-btn");
+  const contactContainer = document.querySelector(".contact-container");
+  const contactForm = document.querySelector(".contact-form");
+  const form = document.querySelector(".contact-form form");
+  const successMessage = document.querySelector(".success-message");
+  const video = document.getElementById("bg-video");
+  const usMap = document.querySelector(".container .left img");
+  const modeIcon = document.querySelector(".mode-switch .icon");
+  const line = document.querySelectorAll(".line");
+  const h1 = document.querySelector(".main-heading");
+  const root = document.documentElement;
+  let scrollSpeed = !isNotMobile() ? 0.22 : 0.07;
+  let lightMode = false;
+
+  const body = document.body;
+  const main = document.getElementById("scroll");
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+  
+    const formData = new FormData(form); // Use the form element directly
+    
+    contactForm.style.display = 'none';
+    successMessage.style.display = 'flex';
+  
+    setTimeout(() => {
+      contactForm.style.display = 'block';
+      successMessage.style.display = 'none';
+    }, 3000);
+    
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        body: formData
+      });
+      
+      if (response.ok) {
+        alert('Email sent successfully!');
+        // Optionally, reset the form
+        form.reset();
+      } else {
+        throw new Error('Failed to send email');
+      }
+    } catch (error) {
+      console.error(error);
+      alert('An error occurred. Please try again later.');
+    }
+  });
+  
+  // Scroll to the top of the page on page reload
+  window.addEventListener("load", function () {
+    window.scrollTo(0, 0);
+    video.play();
+  });
+
+  let sx = 0,
+    sy = 0; // For scroll positions
+  let dx = sx,
+    dy = sy; // For container positions
+
+  contactBtns.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      contactContainer.style.display = "block";
+      toggleScrollLock(true);
+    })
+  );
+
+  closeBtn.addEventListener("click", () => {
+    contactContainer.style.display = "none";
+    toggleScrollLock(false);
+  });
+
+  function updateBodyHeight() {
+    body.style.height =
+      Math.max(
+        main.clientHeight,
+        document.documentElement.scrollHeight,
+        document.body.scrollHeight,
+        document.documentElement.offsetHeight,
+        document.body.offsetHeight
+      ) + "px";
+  }
+
+  updateBodyHeight();
+
+  main.style.cssText = "position: fixed; top: 0; left: 0;";
+
+  // Bind a scroll function
+  window.addEventListener("scroll", easeScroll);
+
+  function easeScroll() {
+    sx = window.pageXOffset;
+    sy = window.pageYOffset;
+  }
+
+  window.requestAnimationFrame(render);
+
+  function render() {
+    // We calculate our container position by linear interpolation method
+    dx = li(dx, sx, scrollSpeed);
+    dy = li(dy, sy, scrollSpeed);
+
+    dx = Math.floor(dx * 100) / 100;
+    dy = Math.floor(dy * 100) / 100;
+
+    main.style.transform = `translate3d(-${dx}px, -${dy}px, 0px)`;
+
+    window.requestAnimationFrame(render);
+  }
+
+  function li(a, b, n) {
+    return (1 - n) * a + n * b;
+  }
+
+  // Update body height on resize
+  window.addEventListener("resize", updateBodyHeight);
+
+  modeBtn.addEventListener("click", handleModeChange);
+
+  window.addEventListener("scroll", () => {
+    const scale = clamp(window.scrollY / 200, 1.5, 3.5);
+    if (window.scrollY > 100 && isNotMobile()) {
+      if (isNotTablet()) {
+        video.style.transform = `scale(${scale})`;
+        lightMode
+          ? (video.style.opacity = "0.55")
+          : (video.style.opacity = "0.2");
+      }
+      nav.classList.add("scrolled");
+    } else {
+      nav.classList.remove("scrolled");
+    }
+  });
+
+  function handleModeChange() {
+    lightMode = !lightMode;
+    const videoOpacity = lightMode ? "0.55" : "0.2";
+    const primaryColor = lightMode ? "#e8e8e8" : "#080808";
+    const secondaryColor = lightMode ? "#080808" : "#e8e8e8";
+    const navbarColor = lightMode ? "#FFFFFF" : "#131313";
+    const borderColor = lightMode
+      ? "rgba(0, 0, 0, 0.3)"
+      : "rgba(232, 232, 232, 0.3)";
+    const lineBackground = lightMode
+      ? `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000000 75%, #000000 100%)`
+      : `linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%)`;
+
+    logo.forEach((l) => l.classList.toggle("invert", lightMode));
+    usMap.classList.toggle("invert", lightMode);
+    logoCTA.classList.toggle("invert", lightMode);
+    video.classList.toggle("invert", lightMode);
+    globe.classList.toggle("invert", lightMode);
+    video.style.opacity = videoOpacity;
+    root.style.setProperty("--primary-color", primaryColor);
+    root.style.setProperty("--secondary-color", secondaryColor);
+    root.style.setProperty("--navbar", navbarColor);
+    root.style.setProperty("--border", borderColor);
+    modeIcon.classList.toggle("light", lightMode);
+    line.forEach((l) => (l.style.background = lineBackground));
+  }
+});
+
+// Utility functions
+const clamp = (number, min, max) => Math.min(Math.max(number, min), max);
+
+// Check if the screen width is greater than a certain threshold (considered non-mobile)
+function isNotMobile() {
+  return window.innerWidth > 768;
+}
+
+// Check if the screen width is greater than a certain threshold (considered non-tablet)
+function isNotTablet() {
+  return window.innerWidth > 1025;
+}
+
+// Function to toggle scroll lock
+function toggleScrollLock(lock) {
+  document.body.style.overflow = lock ? "hidden" : "";
+}

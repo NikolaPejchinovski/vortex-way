@@ -1,1 +1,321 @@
-@media only screen and (max-width:767px){header nav,header nav.scrolled{padding:0 20px}.logo,nav.scrolled .logo{width:150px;height:150px}.main-heading,h1{font-size:35px}#based-in,header nav,section{width:100vw}.container,.container .right,footer{text-align:center}h2{font-size:18px}#bg-video{transform:scale(4)!important}section{margin-bottom:100px}header nav{background:0 0}.logo{background:url(../img/logo-nav.svg) center/contain no-repeat}nav.scrolled .logo{background:url(../img/logo-nav.svg) center/contain no-repeat}.contact-btn{border-radius:0}.close-btn{padding:10px;top:45px;right:50px}.main-heading{width:90vw}.sub-heading{font-size:18px;width:90vw}#based-in .container .left img,#cta .container .right img,.copyright{width:300px}.container{flex-direction:column;padding:0 30px}#section2 .container{margin:0}#section2 .container h1,#section2 .container h2,.approach,.footer-text{width:90vw}.heading-container{height:200px}#cta .contact-btn,.approach-number,.middle-line,.separator{display:none}#cta .container{flex-direction:column-reverse;padding:0}#cta .container .left{text-align:center;width:90vw;margin-right:0}footer{max-height:400px}.footer-content{justify-content:center;margin-top:-30px}.copyright br{display:block}footer hr{position:absolute;bottom:80px;border-color:var(--border);width:90%}}@media only screen and (max-width:1300px) and (max-height:430px) and (orientation:landscape){.contact-form{display:flex;flex-direction:column;justify-content:center;border:none;width:100%;height:90vh;padding:10px;transform:scale(.6)}.contact-form h2{margin-bottom:10px}.contact-form input[type=email],.contact-form input[type=tel],.contact-form input[type=text],.contact-form textarea{width:100%;padding:10px;margin-bottom:5px;color:var(--secondary-color);background-color:rgba(255,255,255,.1);border:1px solid var(--border);height:35px}.contact-form textarea{height:60px}.container{padding:0 120px}#section2 .container{margin:50px 0;justify-content:center}#section2 .container:nth-child(2){justify-content:center}#section2 .container h1{font-size:35px}#section2 .container h2{font-size:18px}#cta .contact-btn,.approach-number,.line-container,.middle-line{display:none}.approach{justify-content:flex-start;margin-bottom:50px}#cta .container .left{text-align:center;width:90vw;margin-right:0}footer{height:90vh;gap:10px}.copyright{font-size:12px}}@media only screen and (max-height:715px){.close-btn{top:45px;right:50px}}
+/* 
+  Media query for screens with a maximum width of 767 pixels.
+  Adjustments to layout and styles to improve user experience on small screens (e.g., smartphones).
+*/
+@media only screen and (max-width: 767px) {
+  /* 
+    Adjust font sizes for better readability on small screens.
+  */
+  h1 {
+    font-size: 35px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  /* 
+    Scale the background video to enhance visual experience on smartphones.
+    Adjust the scale to 4x for better viewing.
+  */
+  #bg-video {
+    transform: scale(4) !important;
+  }
+
+  /* 
+    Set sections to span the entire viewport width to optimize layout on smartphones.
+  */
+  section {
+    width: 100vw;
+    margin-bottom: 100px;
+  }
+
+  /* 
+    Adjust header navigation styles for better visibility and usability on smartphones.
+  */
+  header nav {
+    background: transparent;
+    width: 100vw;
+    padding: 0 20px;
+  }
+
+  header nav.scrolled {
+    padding: 0 20px;
+  }
+
+  /* 
+    Adjust logo size and background for better presentation on smartphones.
+  */
+  .logo {
+    background: url(../img/logo-nav.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 150px;
+    height: 150px;
+  }
+
+  nav.scrolled .logo {
+    background: url(../img/logo-nav.svg);
+    background: url(../img/logo-nav.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 150px;
+    height: 150px;
+  }
+
+  .contact-btn {
+    border-radius: 0px;
+  }
+
+  .close-btn {
+    padding: 10px;
+    top: 45px;
+    right: 50px;
+  }
+
+  /* 
+    Adjust heading sizes and width for improved readability on smartphones.
+  */
+
+  .main-heading {
+    font-size: 35px;
+    width: 90vw;
+  }
+
+  .sub-heading {
+    font-size: 18px;
+    width: 90vw;
+  }
+
+  /* 
+    Set 'based-in' section to span the entire viewport width on smartphones.
+  */
+  #based-in {
+    width: 100vw;
+  }
+
+  /* 
+    Adjust image width for better presentation on smartphones.
+  */
+  #based-in .container .left img {
+    width: 300px;
+  }
+
+  /* 
+    Adjust container layout for improved alignment and spacing on smartphones.
+  */
+  .container {
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+  }
+
+  .container .right {
+    text-align: center;
+  }
+
+  /* Section 2 */
+  #section2 .container {
+    margin: 0px 0;
+  }
+
+  /* 
+    Adjust heading widths for better presentation on smartphones.
+  */
+  #section2 .container h1 {
+    width: 90vw;
+  }
+
+  #section2 .container h2 {
+    width: 90vw;
+  }
+
+  .heading-container {
+    height: 200px;
+  }
+
+  /* 
+    Hide separators, middle lines, and approach numbers to simplify layout on smartphones.
+  */
+  .separator,
+  .middle-line,
+  .approach-number {
+    display: none;
+  }
+
+  .approach {
+    width: 90vw;
+  }
+
+  /* 
+    Adjust margin and alignment for better presentation of CTA section on smartphones.
+  */
+  #cta .container {
+    flex-direction: column-reverse;
+    padding: 0 0;
+  }
+
+  #cta .container .left {
+    text-align: center;
+    width: 90vw;
+    margin-right: 0px;
+  }
+
+  #cta .contact-btn {
+    display: none;
+  }
+
+  /* 
+    Adjust image width in the CTA section for better presentation on smartphones.
+  */
+  #cta .container .right img {
+    width: 300px;
+  }
+
+  /* 
+    Center align footer text and adjust height for better presentation on smartphones.
+  */
+  footer {
+    text-align: center;
+    max-height: 400px;
+  }
+
+  .footer-content {
+    justify-content: center;
+    margin-top: -30px;
+  }
+
+  .footer-text {
+    width: 90vw;
+  }
+
+  .copyright {
+    width: 300px;
+  }
+
+  .copyright br {
+    display: block;
+  }
+
+  footer hr {
+    position: absolute;
+    bottom: 80px;
+    border-color: var(--border);
+    width: 90%;
+  }
+}
+
+/* 
+  Media query for landscape mode with a maximum width of 1300 pixels and maximum height of 430 pixels.
+  Adjustments to layout and styles for improved user experience on devices in landscape orientation.
+*/
+@media only screen and (max-width: 1300px) and (max-height: 430px) and (orientation: landscape) {
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+    width: 100%;
+    height: 90vh;
+    padding: 10px;
+    transform: scale(0.6);
+  }
+
+  .contact-form h2 {
+    margin-bottom: 10px;
+  }
+
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form input[type="tel"],
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    color: var(--secondary-color);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border);
+    height: 35px;
+  }
+
+  .contact-form textarea {
+    height: 60px;
+  }
+  /* 
+    Adjust container padding for better layout on devices in landscape orientation.
+  */
+  .container {
+    padding: 0 120px;
+  }
+
+  /* 
+    Adjust container margins and justify content for improved alignment on devices in landscape orientation.
+  */
+  #section2 .container {
+    margin: 50px 0;
+    justify-content: center;
+  }
+
+  #section2 .container:nth-child(2) {
+    justify-content: center;
+  }
+
+  /* 
+    Adjust heading sizes for improved readability on devices in landscape orientation.
+  */
+  #section2 .container h1 {
+    font-size: 35px;
+  }
+
+  #section2 .container h2 {
+    font-size: 18px;
+  }
+
+  /* 
+    Hide separators, middle lines, and approach numbers to simplify layout on devices in landscape orientation.
+  */
+  .line-container,
+  .middle-line,
+  .approach-number {
+    display: none;
+  }
+
+  /* 
+    Adjust container alignment and margin for better presentation of approach section on devices in landscape orientation.
+  */
+  .approach {
+    justify-content: flex-start;
+    margin-bottom: 50px;
+  }
+
+  /* 
+    Adjust alignment and width for better presentation of CTA section on devices in landscape orientation.
+  */
+  #cta .container .left {
+    text-align: center;
+    width: 90vw;
+    margin-right: 0px;
+  }
+
+  #cta .contact-btn {
+    display: none;
+  }
+
+  footer {
+    height: 90vh;
+    gap: 10px;
+  }
+
+  .copyright {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-height: 715px) {
+  .close-btn {
+    top: 45px;
+    right: 50px;
+  }
+}
