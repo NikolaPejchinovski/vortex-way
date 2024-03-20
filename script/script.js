@@ -24,8 +24,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-  
-    const formData = new FormData(form); // Use the form element directly
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const message = document.getElementById('message').value;
     
     contactForm.style.display = 'none';
     successMessage.style.display = 'flex';
@@ -36,13 +39,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 3000);
     
     try {
-      const response = await fetch('/api/send-email', {
+      const response = await fetch('https://vortex-way.onrender.com/api/send-email', {
         method: 'POST',
-        body: formData
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          message
+        }),
       });
       
       if (response.ok) {
-        alert('Email sent successfully!');
         // Optionally, reset the form
         form.reset();
       } else {
