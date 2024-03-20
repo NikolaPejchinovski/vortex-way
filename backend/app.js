@@ -31,7 +31,7 @@ app.post('/api/send-email', (req, res) => {
 
   // Email content
   const mailOptions = {
-    from: email,
+    from: 'info@vortexway.com',
     to: 'info@vortexway.com',
     subject: `Message from ${name}`,
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}\nPhone: ${phone}`,
