@@ -25,7 +25,7 @@ app.post('/api/send-email', (req, res) => {
     secure: true,
     auth: {
       user: 'info@vortexway.com',
-      pass: 'Pass123@',
+      pass: 'Pass@123',
     },
   });
 

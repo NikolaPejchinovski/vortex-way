@@ -14,14 +14,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const usMap = document.querySelector(".container .left img");
   const modeIcon = document.querySelector(".mode-switch .icon");
   const line = document.querySelectorAll(".line");
-  const h1 = document.querySelector(".main-heading");
   const root = document.documentElement;
-  let scrollSpeed = !isNotMobile() ? 0.22 : 0.07;
+  let myScreenOrientation = window.screen.orientation;
   let lightMode = false;
-
-  const body = document.body;
-  const main = document.getElementById("scroll");
-
+  
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -29,6 +25,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
     const message = document.getElementById('message').value;
+
+    const formData = new URLSearchParams();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('phone', phone);
+    formData.append('message', message);
+
     
     contactForm.style.display = 'none';
     successMessage.style.display = 'flex';
@@ -41,36 +44,26 @@ document.addEventListener("DOMContentLoaded", function () {
     try {
       const response = await fetch('https://vortex-way.onrender.com/api/send-email', {
         method: 'POST',
-        body: JSON.stringify({
-          name,
-          email,
-          phone,
-          message
-        }),
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formData,
       });
       
-      if (response.ok) {
-        // Optionally, reset the form
-        form.reset();
-      } else {
+      if (!response.ok) {
         throw new Error('Failed to send email');
       }
     } catch (error) {
       console.error(error);
       alert('An error occurred. Please try again later.');
     }
+    form.reset();
   });
   
   // Scroll to the top of the page on page reload
   window.addEventListener("load", function () {
-    window.scrollTo(0, 0);
     video.play();
   });
-
-  let sx = 0,
-    sy = 0; // For scroll positions
-  let dx = sx,
-    dy = sy; // For container positions
 
   contactBtns.forEach((btn) =>
     btn.addEventListener("click", () => {
@@ -84,55 +77,11 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleScrollLock(false);
   });
 
-  function updateBodyHeight() {
-    body.style.height =
-      Math.max(
-        main.clientHeight,
-        document.documentElement.scrollHeight,
-        document.body.scrollHeight,
-        document.documentElement.offsetHeight,
-        document.body.offsetHeight
-      ) + "px";
-  }
-
-  updateBodyHeight();
-
-  main.style.cssText = "position: fixed; top: 0; left: 0;";
-
-  // Bind a scroll function
-  window.addEventListener("scroll", easeScroll);
-
-  function easeScroll() {
-    sx = window.pageXOffset;
-    sy = window.pageYOffset;
-  }
-
-  window.requestAnimationFrame(render);
-
-  function render() {
-    // We calculate our container position by linear interpolation method
-    dx = li(dx, sx, scrollSpeed);
-    dy = li(dy, sy, scrollSpeed);
-
-    dx = Math.floor(dx * 100) / 100;
-    dy = Math.floor(dy * 100) / 100;
-
-    main.style.transform = `translate3d(-${dx}px, -${dy}px, 0px)`;
-
-    window.requestAnimationFrame(render);
-  }
-
-  function li(a, b, n) {
-    return (1 - n) * a + n * b;
-  }
-
-  // Update body height on resize
-  window.addEventListener("resize", updateBodyHeight);
-
   modeBtn.addEventListener("click", handleModeChange);
 
   window.addEventListener("scroll", () => {
     const scale = clamp(window.scrollY / 200, 1.5, 3.5);
+    console.log(window.scrollY);
     if (window.scrollY > 100 && isNotMobile()) {
       if (isNotTablet()) {
         video.style.transform = `scale(${scale})`;
@@ -148,29 +97,49 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function handleModeChange() {
     lightMode = !lightMode;
-    const videoOpacity = lightMode ? "0.55" : "0.2";
-    const primaryColor = lightMode ? "#e8e8e8" : "#080808";
-    const secondaryColor = lightMode ? "#080808" : "#e8e8e8";
-    const navbarColor = lightMode ? "#FFFFFF" : "#131313";
-    const borderColor = lightMode
-      ? "rgba(0, 0, 0, 0.3)"
-      : "rgba(232, 232, 232, 0.3)";
-    const lineBackground = lightMode
-      ? `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000000 75%, #000000 100%)`
-      : `linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%)`;
-
-    logo.forEach((l) => l.classList.toggle("invert", lightMode));
-    usMap.classList.toggle("invert", lightMode);
-    logoCTA.classList.toggle("invert", lightMode);
-    video.classList.toggle("invert", lightMode);
-    globe.classList.toggle("invert", lightMode);
-    video.style.opacity = videoOpacity;
-    root.style.setProperty("--primary-color", primaryColor);
-    root.style.setProperty("--secondary-color", secondaryColor);
-    root.style.setProperty("--navbar", navbarColor);
-    root.style.setProperty("--border", borderColor);
-    modeIcon.classList.toggle("light", lightMode);
-    line.forEach((l) => (l.style.background = lineBackground));
+    if (lightMode) {
+      logo.forEach((l) => l.classList.add("invert"));
+      usMap.classList.add("invert");
+      logoCTA.classList.add("invert");
+      video.classList.add("invert");
+      globe.classList.add("invert");
+      video.style.opacity = "0.55";
+      root.style.setProperty("--primary-color", "#e8e8e8");
+      root.style.setProperty("--secondary-color", "#080808");
+      root.style.setProperty("--navbar", "#FFFFFF");
+      root.style.setProperty("--border", "rgba(0, 0, 0, 0.3)");
+      modeIcon.classList.add("light");
+      line.forEach(
+        (l) =>
+          (l.style.background = `linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        #000000 75%,
+        #000000 100%
+      )`)
+      );
+    } else {
+      logo.forEach((l) => l.classList.remove("invert"));
+      usMap.classList.remove("invert");
+      logoCTA.classList.remove("invert");
+      video.classList.remove("invert");
+      globe.classList.remove("invert");
+      video.style.opacity = "0.2";
+      root.style.setProperty("--primary-color", "#080808");
+      root.style.setProperty("--secondary-color", "#e8e8e8");
+      root.style.setProperty("--navbar", "#131313");
+      root.style.setProperty("--border", "rgba(232, 232, 232, 0.3)");
+      modeIcon.classList.remove("light");
+      line.forEach(
+        (l) =>
+          (l.style.background = `linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        #ffffff 75%,
+        #ffffff 100%
+      )`)
+      );
+    }
   }
 });
 
